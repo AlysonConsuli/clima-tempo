@@ -1,4 +1,5 @@
 const apiKey = '93313b1c2f2f711a51dc8312937f6839'
+const main = document.querySelector('main')
 
 let cityName = null
 let stateCode = null
@@ -21,7 +22,11 @@ function accessAdress() {
     const promise = axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&limit=${limit}&appid=${apiKey}`)
 
     promise.then(response => {
-        console.log(response.data)
+        //console.log(response.data)
+        if(response.data.length === 0){
+            alert('Insira uma lugar válido')
+            window.location.reload()
+        }
         const adress = response.data[0]
         /*console.log(adress.lat)
         console.log(adress.lon)*/
@@ -39,6 +44,18 @@ function accessWeather(){
 
     promise.then(response => {
         console.log(response.data)
+        const localWeather = response.data
+        main.innerHTML = `
+        <h2>Tempo agora em <br> ${localWeather.name} ${stateCode.toUpperCase()}</h2>
+        <div class="weather">
+            <img src="http://openweathermap.org/img/wn/${localWeather.weather[0].icon}@2x.png" alt="${localWeather.weather[0].description}">
+            <span>${Math.round(localWeather.main.temp - 273)}º</span>
+        </div>
+        <div class="infos">
+            <p>Vento: ${Math.round(localWeather.wind.speed * 3.6)} km/h</p>
+            <p>Umidade: ${localWeather.main.humidity}%</p>
+        </div>
+        `
     })
     promise.catch(erro => {
         console.log(erro.response.status)

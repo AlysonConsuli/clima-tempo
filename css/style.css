@@ -29,25 +29,46 @@ header{
 }
 
 main{
-    height: 500px;
     width: 300px;
     background-color: #fff;
     margin: 40px auto 0 auto;
-    /*display: flex;
-    justify-content: center;*/
     border-radius: 6px;
-    padding: 10px 12px 0 12px;
+    padding: 20px 12px 20px 12px;
 }
 
 h2{
     font-weight: 700;
     color: #000;
     text-align: center;
-    padding-bottom: 10px;
     margin: 0 auto;
 }
 
 p{
-    font-weight: 700;
     padding-bottom: 7px;
+    margin: 0 auto;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+}
+
+.weather{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+span{
+    font-weight: 700;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
