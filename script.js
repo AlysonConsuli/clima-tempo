@@ -24,7 +24,7 @@ function adressPermission() {
 }
 
 function accessAdress() {
-    const promise = axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&limit=${limit}&appid=${apiKey}`)
+    const promise = axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&limit=${limit}&appid=${apiKey}`)
 
     promise.then(response => {
         //console.log(response.data)
@@ -45,7 +45,7 @@ function accessAdress() {
 }
 
 function accessWeather(){
-    const promise = axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+    const promise = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
 
     promise.then(response => {
         console.log(response.data)
