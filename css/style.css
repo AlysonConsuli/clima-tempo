@@ -72,3 +72,16 @@ span{
     align-items: center;
     justify-content: center;
 }
+
+input{
+    height: 46px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    padding-left: 14px;
+    font-size: 20px;
+    font-family: 'Roboto';
+}

@@ -1,5 +1,10 @@
 const apiKey = '93313b1c2f2f711a51dc8312937f6839'
 const main = document.querySelector('main')
+const btn = document.querySelector('button')
+
+let city = document.querySelector('.city')
+let state = document.querySelector('.state')
+let country = document.querySelector('.country')
 
 let cityName = null
 let stateCode = null
@@ -9,7 +14,7 @@ let lat = 0
 let lon = 0
 
 function adressPermission() {
-    const permission = prompt('Você permite a busca da sua localização? (sim ou não)')
+    const permission = prompt('Você permite a busca da sua localização? (digite "sim" para permitir)')
     if (permission.toLowerCase() === 'sim') {
         cityName = prompt('Qual sua cidade?')
         stateCode = prompt('Qual código do seu estado?')
@@ -60,6 +65,13 @@ function accessWeather(){
     promise.catch(erro => {
         console.log(erro.response.status)
     })
+}
+
+function searchAdress(){
+    cityName = city.value
+    stateCode = state.value
+    countryCode = country.value
+    accessAdress()
 }
 
 adressPermission()
