@@ -5,4 +5,49 @@ body{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: #f3f3f3;
+    cursor: default;
+    font-size: 20px;
+}
+
+h1{
+    font-size: 37px;
+    font-weight: 700;
+    color: #fff;
+}
+
+header{
+    height: 80px;
+    width: 100%;
+    background-color: #0080CD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+
+main{
+    height: 500px;
+    width: 300px;
+    background-color: #fff;
+    margin: 40px auto 0 auto;
+    /*display: flex;
+    justify-content: center;*/
+    border-radius: 6px;
+    padding: 10px 12px 0 12px;
+}
+
+h2{
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    padding-bottom: 10px;
+    margin: 0 auto;
+}
+
+p{
+    font-weight: 700;
+    padding-bottom: 7px;
 }
