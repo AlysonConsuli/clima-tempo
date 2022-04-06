@@ -13,39 +13,23 @@ let limit = 1
 let lat = 0
 let lon = 0
 
-function adressPermission() {
-    const permission = prompt('Você permite a busca da sua localização? (digite "sim" para permitir)')
-    if (permission.toLowerCase() === 'sim') {
-        cityName = prompt('Qual sua cidade?')
-        stateCode = prompt('Qual código do seu estado?')
-        countryCode = prompt('Qual código do seu país?')
-        accessAdress()
-    }
-}
-
 function accessAdress() {
-    const promise = axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&limit=${limit}&appid=${apiKey}`)
+    const promise = axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&limit=${limit}&appid=${apiKey}`)
 
     promise.then(response => {
-        //console.log(response.data)
-        if(response.data.length === 0){
+        if (response.data.length === 0) {
             alert('Insira uma lugar válido')
             window.location.reload()
         }
         const adress = response.data[0]
-        /*console.log(adress.lat)
-        console.log(adress.lon)*/
         lat = adress.lat
         lon = adress.lon
         accessWeather()
     })
-    promise.catch(erro => {
-        console.log(erro.response.status)
-    })
 }
 
-function accessWeather(){
-    const promise = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+function accessWeather() {
+    const promise = axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
 
     promise.then(response => {
         console.log(response.data)
@@ -62,20 +46,15 @@ function accessWeather(){
         </div>
         `
     })
-    promise.catch(erro => {
-        console.log(erro.response.status)
-    })
 }
 
-function searchAdress(){
+function searchAdress() {
     cityName = city.value
     stateCode = state.value
     countryCode = country.value
-    accessAdress()
+    if (cityName === '') {
+        alert('Preencha a cidade')
+    } else {
+        accessAdress()
+    }
 }
-
-adressPermission()
-
-
-
-

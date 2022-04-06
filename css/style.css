@@ -1,7 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: #f3f3f3;
@@ -9,13 +10,13 @@ body{
     font-size: 20px;
 }
 
-h1{
+h1 {
     font-size: 37px;
     font-weight: 700;
     color: #fff;
 }
 
-header{
+header {
     height: 80px;
     width: 100%;
     background-color: #0080CD;
@@ -28,7 +29,7 @@ header{
     top: 0;
 }
 
-main{
+main {
     width: 300px;
     background-color: #fff;
     margin: 40px auto 0 auto;
@@ -36,44 +37,44 @@ main{
     padding: 20px 12px 20px 12px;
 }
 
-h2{
+h2 {
     font-weight: 700;
     color: #000;
     text-align: center;
     margin: 0 auto;
 }
 
-p{
+p {
     padding-bottom: 7px;
     margin: 0 auto;
 }
 
-img{
+img {
     width: 50px;
     height: 50px;
 }
 
-.weather{
+.weather {
     display: flex;
     gap: 8px;
     justify-content: center;
 }
 
-span{
+span {
     font-weight: 700;
     font-size: 26px;
     display: flex;
     align-items: center;
 }
 
-.infos{
+.infos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-input{
+input {
     height: 46px;
     width: 100%;
     display: flex;
